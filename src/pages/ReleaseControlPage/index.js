@@ -1,3 +1,9 @@
 import React, { Component } from 'react';
 
-export default () => <div>Hello ReleaseControlPage</div>
+export default class App extends Component {
+  render() {
+    return (
+      <div>Hello ReleaseControlPage</div>
+    )
+  }
+}
