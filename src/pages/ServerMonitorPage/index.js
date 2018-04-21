@@ -1,3 +1,11 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
-export default () => <div>Hello ServerMonitorPage</div>
+const Wrapper = styled.div`
+	color: blue;
+	&:hover {
+		color: red;
+	}
+`
+
+export default () => <Wrapper><div>Hello ServerMonitorPage</div></Wrapper>
