@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bulma/css/bulma.css'
 import './App.css';
 
 import ServerMonitorPage from './pages/ServerMonitorPage';
@@ -14,12 +15,13 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <ul>
-            <li><Link to="/">ServerMonitorPage</Link></li>
-            <li><Link to="/ReleaseControlPage">ReleaseControlPage</Link></li>
-          </ul>
-          <hr />
+        <div className="container">
+          <div className="navbar-menu">
+            <div class="navbar-start">
+              <Link className="navbar-item" to="/">ServerMonitorPage</Link>
+              <Link className="navbar-item" to="/ReleaseControlPage">ReleaseControlPage</Link>
+            </div>
+          </div>
           <Route exact path="/" component={ServerMonitorPage}/>
           <Route path="/ReleaseControlPage" component={ReleaseControlPage}/>
         </div>
