@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <Card>
         <CardHeader
-          title="Hello ReleaseControlPage"
+          title="Hello JobControlPage"
           subtitle="Subtitle"
         />
       </Card>
