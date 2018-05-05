@@ -12,6 +12,10 @@ import {
   Link
 } from 'react-router-dom'
 
+const DEFAULT = {
+  value: 1,
+};
+
 class App extends Component {
   componentDidMount(){
     document.addEventListener('DOMContentLoaded', function () {
@@ -70,8 +74,10 @@ class App extends Component {
                      onClick={() => {
                       this.props.dispatch({
                         type: 'ADD',
-                        value: 10,
+                        value: DEFAULT.value,
                       });
+                      DEFAULT.value += 3;
+                      console.log(DEFAULT.value);
                      }}>Version: {this.props.version}</div>
               </div>
             </div>
