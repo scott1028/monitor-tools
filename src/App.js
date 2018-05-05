@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import 'bulma/css/bulma.css'
 import './App.css';
 
@@ -58,7 +59,6 @@ class App extends Component {
                 <span></span>
               </div>
             </div>
-
             <div id="navbarTop"
                  className="navbar-menu">
               <div className="navbar-start">
@@ -66,6 +66,13 @@ class App extends Component {
                       to="/">ServerMonitorPage</Link>
                 <Link className="navbar-item"
                       to="/ReleaseControlPage">ReleaseControlPage</Link>
+                <div className="navbar-item"
+                     onClick={() => {
+                      this.props.dispatch({
+                        type: 'ADD',
+                        value: 10,
+                      });
+                     }}>Version: {this.props.version}</div>
               </div>
             </div>
           </nav>
@@ -77,4 +84,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(state => {
+  return {
+    version: state.version,
+  }
+})(App);
