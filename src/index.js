@@ -5,7 +5,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-const store = createStore((state = {
+const store = createStore((prevState = {
 	version: 1,
 }, action) => {
 	if(action.type === 'ADD') {
