@@ -10,11 +10,11 @@ const store = createStore((prevState = {
 }, action) => {
 	if(action.type === 'ADD') {
 		return {
-			...state,
-			version: state.version + action.value
+			...prevState,
+			version: prevState.version + action.value
 		};
 	}
-	return state;
+	return prevState;
 })
 
 ReactDOM.render(<Provider store={store}>
