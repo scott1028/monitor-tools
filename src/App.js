@@ -109,9 +109,34 @@ const RounteCmp = ({onClick, version}) => {
                  onClick={onClick}>Version: {version}</div>
           </div>
         </div>
+        <br />
+        <TestCmp>{
+          (obj) => <pre>{obj}</pre>
+        }</TestCmp>
+        <TestCmp />
+        <br />
+        { [1, 20, 3, 40, 5] }
       </nav>
       <Route exact path="/" component={ServerMonitorPage} />
       <Route path="/ReleaseControlPage" component={ReleaseControlPage} />
+    </div>
+  )
+}
+
+const TestCmp = ({
+  children = () => <div>Default</div>,
+  data = [1, 2, 3, 4, 5]
+}) => {
+  return (
+    <div>
+      <label>This is a TestCmp</label>
+      {
+        data.map(row => {
+          return (
+            <div key={row}>{children(row)}</div>
+          )
+        })
+      }
     </div>
   )
 }
